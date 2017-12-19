@@ -5,6 +5,7 @@
  */
 package com.mukhlis.Dao;
 
+import com.mukhlis.entity.Tablecustomers;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -54,7 +55,7 @@ public class CustomerService {
     }
     
     @Transactional
-    public void addCustomer(CustomerService cus){
+    public void addCustomer(Tablecustomers cus){
         em = emf.createEntityManager();
         em.getTransaction().begin();
         em.persist(cus);
@@ -62,23 +63,23 @@ public class CustomerService {
 //        em.close();
     }
     
-    public List<CustomerService> findAll(){
-        List<CustomerService> prod;
+    public List<Tablecustomers> findAll(){
+        List<Tablecustomers> prod;
         prod = this.em.createNamedQuery("CustomerService.findAll").getResultList();
         return prod;
     }
     
-    public CustomerService findById(Integer id){
-        return em.find(CustomerService.class, id);
+    public Tablecustomers findById(Integer id){
+        return em.find(Tablecustomers.class, id);
     }
     
-    public CustomerService findByUsername(String username) {
-        CustomerService user = new CustomerService();
+    public Tablecustomers findByUsername(String username) {
+        Tablecustomers user = new Tablecustomers();
         try {
             em = emf.createEntityManager();
-            Query query = em.createNamedQuery("CustomerService.findByUsername");
+            Query query = em.createNamedQuery("Tablecustomers.findByUsername");
             query.setParameter("username", username);
-            user = (CustomerService) query.getSingleResult();
+            user = (Tablecustomers) query.getSingleResult();
         } catch (NoResultException nre) {
             java.util.logging.Logger.getLogger(username).log(Level.SEVERE, username, nre);
         }

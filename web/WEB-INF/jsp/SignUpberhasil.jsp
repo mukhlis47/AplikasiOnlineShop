@@ -1,6 +1,6 @@
 <%-- 
-    Document   : customerdetail
-    Created on : Dec 13, 2017, 3:12:12 PM
+    Document   : SignUpberhasil
+    Created on : Dec 18, 2017, 1:07:13 PM
     Author     : user
 --%>
 
@@ -12,11 +12,11 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>${product.productNama}</h1>
+        <h1>Sign Up Berhasil</h1>
+        <h3>${data.namaLengkap} </h3> 
         <p>
-            Harga: ${product.harga} IDR
-            Stok: ${product.stok} pcs
+            <a href="${pageContext.request.contextPath}/login">Please Login</a>
         </p>
-        <a href="${pageContext.request.contextPath}/order/add/${c.id}">Add to cart</a>
+    </body>
     </body>
 </html>

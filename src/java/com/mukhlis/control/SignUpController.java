@@ -4,14 +4,22 @@
  * and open the template in the editor.
  */
 package com.mukhlis.control;
+
+import com.mukhlis.Dao.CustomerService;
+import com.mukhlis.entity.Tablecustomers;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/SignUp")
+@RequestMapping("/signup")
 public class SignUpController {
+
+    @Autowired
+    CustomerService cs;
+
     @RequestMapping()
     public String SignUpForm(Model model) {
         SignUpFormBean SignUpBean = new SignUpFormBean();
@@ -21,11 +29,18 @@ public class SignUpController {
     }
 
     @RequestMapping(value = "/save")
-    public String saveSignUp(@ModelAttribute("SignUpBean") SignUpFormBean SignUpBean, Model model) {
-        System.out.println("User Firstname: " + SignUpBean.getFirstName());
+    public String saveRegistration(@ModelAttribute("SignUpBean") SignUpFormBean SignUpBean,
+            Model model) {
+        Tablecustomers customer = new Tablecustomers();
+        customer.setNamalengkap(SignUpBean.getNamaLengkap());
+        customer.setAddress(SignUpBean.getAlamat());
+        customer.setEmail(SignUpBean.getEmail());
+        customer.setPhone(SignUpBean.getPhone());
+        customer.setUsername(SignUpBean.getUsername());
+        customer.setPassword(SignUpBean.getPassword());
+        cs.addCustomer(customer);
         model.addAttribute("data", SignUpBean);
-        return "successregistration";
-    }
+        return "SignUpberhasil";
 
-    
+    }
 }

@@ -10,22 +10,36 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Silahkan Registrasi</title>
+        <title>Sign Up</title>
     </head>
     <body>
-        <h1>Silahkan Registrasi</h1>
+        <h1>Sign Up</h1>
          <form:form action="signup/save" modelAttribute="SignUpBean" method="POST" >
-            <form:label path="firstName">First Name</form:label>
-            <form:input path="firstName"/><br/>
-            <form:label path="lastName">Last Name</form:label>
-            <form:input path="lastName"/><br/>
-            <form:label path="username">Username</form:label>
-            <form:input path="username"/><br/>
-            <form:label path="password">Password</form:label>
-            <form:password path="password"/>
+             <table>
+                
+            <tr><td><form:label path="namaLengkap">Nama Lengkap</form:label></td>
+                <td><form:input path="namaLengkap"/><br/></td></tr>
+            <tr><td><form:label path="username">Username</form:label></td>
+                <td><form:input path="username"/><br/></td></tr>
+            <tr><td><form:label path="password">Password</form:label></td>
+                <td><form:password path="password"/><br/><td></tr>
+            <tr><td><form:label path="email">Email</form:label></td>
+                <td><form:input path="email"/><br/></td></tr>
+            <tr><td><form:label path="phone">Phone</form:label></td>
+                <td><form:input path="phone"/><br/></td></tr>
+            <tr><td><form:label path="alamat">Alamat</form:label></td>
+                <td><form:input path="alamat"/><br/></td></tr>
+             </table>
             <p>
                 <form:button name="submitButton" value="Submit">Submit</form:button>
             </p>
+            <c:if test="${empty sessionScope.user}">
+
+
+                    <p>
+                        <a href="${pageContext.request.contextPath}/login">Please Login</a>
+                    </p>
+                </c:if>
         </form:form>
     </body>
 </html>

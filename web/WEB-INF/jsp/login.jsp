@@ -13,7 +13,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Silahkan Login</h1>
         <form:form action="login/check" modelAttribute="loginBean" method="POST" >
                         <table>
                             <tr><td><form:label path="userName">Username</form:label></td>

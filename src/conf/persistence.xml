@@ -5,6 +5,9 @@
     <class>com.muklis.model.Cart</class>
     <class>com.muklis.model.Customer</class>
     <class>com.muklis.model.Product</class>
+    <class>com.mukhlis.entity.Tablecustomers</class>
+    <class>com.mukhlis.entity.Tableorder</class>
+    <class>com.mukhlis.entity.Tableproduct</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/AppOnline"/>

@@ -12,8 +12,7 @@ package com.mukhlis.control;
 
     
 public class SignUpFormBean {
-    private String firstName;
-    private String lastName;
+    private String namaLengkap;
     private String username;
     private String password;
     private String email;
@@ -21,33 +20,23 @@ public class SignUpFormBean {
     private String alamat;
 
     /**
+     * @return the namaLengkap
+     */
+    public String getNamaLengkap() {
+        return namaLengkap;
+    }
+
+    /**
+     * @param namaLengkap the namaLengkap to set
+     */
+    public void setNamaLengkap(String namaLengkap) {
+        this.namaLengkap = namaLengkap;
+    }
+
+    /**
      * @return the firstName
      */
-    public String getFirstName() {
-        return firstName;
-    }
-
-    /**
-     * @param firstName the firstName to set
-     */
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    /**
-     * @return the lastName
-     */
-    public String getLastName() {
-        return lastName;
-    }
-
-    /**
-     * @param lastName the lastName to set
-     */
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
+   
     /**
      * @return the username
      */
